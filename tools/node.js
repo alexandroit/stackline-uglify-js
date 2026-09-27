@@ -281,19 +281,11 @@ exports.simple_glob = function simple_glob(glob) {
             var entries = fs.readdirSync(dir);
         } catch (ex) {}
         if (entries) {
-            var pattern = "^" + (path.basename(glob)
-                .replace(/\(/g, "\\(")
-                .replace(/\)/g, "\\)")
-                .replace(/\{/g, "\\{")
-                .replace(/\}/g, "\\}")
-                .replace(/\[/g, "\\[")
-                .replace(/\]/g, "\\]")
-                .replace(/\+/g, "\\+")
-                .replace(/\^/g, "\\^")
-                .replace(/\$/g, "\\$")
-                .replace(/\*/g, "[^/\\\\]*")
-                .replace(/\./g, "\\.")
-                .replace(/\?/g, ".")) + "$";
+            var pattern = "^" + path.basename(glob).replace(/[.*+?^${}()|[\]\\]/g, function(character) {
+                if (character === "*") return "[^/\\\\]*";
+                if (character === "?") return ".";
+                return "\\" + character;
+            }) + "$";
             var mod = process.platform === "win32" ? "i" : "";
             var rx = new RegExp(pattern, mod);
             for (var i in entries) {
