@@ -5,7 +5,16 @@
 
 var UglifyJS = require("../tools/node");
 var sys = require("util");
-var yargs = require("yargs");
+// Only the CLI bootstrap is asynchronous; the public minify API stays synchronous.
+import("yargs/yargs").then(function(module) {
+    main(module.default(process.argv.slice(2)).help(false).version(false)
+        .parserConfiguration({ "camel-case-expansion": false, "parse-positional-numbers": false }));
+}).catch(function(error) {
+    console.error(error && error.stack || error);
+    process.exitCode = 1;
+});
+
+function main(yargs) {
 var fs = require("fs");
 var path = require("path");
 var async = require("async");
@@ -157,7 +166,7 @@ if (ARGS.ast_help) {
 }
 
 if (ARGS.h || ARGS.help) {
-    print(yargs.help());
+    yargs.showHelp("log");
     process.exit(0);
 }
 
@@ -362,6 +371,7 @@ async.eachLimit(files, 1, function (file, cb) {
             }
             else if (ARGS.acorn) {
                 TOPLEVEL = acorn.parse(code, {
+                    ecmaVersion   : 5,
                     locations     : true,
                     sourceFile    : file,
                     program       : TOPLEVEL
@@ -591,4 +601,6 @@ function print_error(msg) {
 
 function print(txt) {
     console.log("%s", txt);
+}
+
 }

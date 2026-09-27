@@ -4,7 +4,15 @@
 
 var U2 = require("../tools/node");
 var fs = require("fs");
-var yargs = require("yargs");
+import("yargs/yargs").then(function(module) {
+    main(module.default(process.argv.slice(2)).help(false).version(false)
+        .parserConfiguration({ "camel-case-expansion": false, "parse-positional-numbers": false }));
+}).catch(function(error) {
+    console.error(error && error.stack || error);
+    process.exitCode = 1;
+});
+
+function main(yargs) {
 var ARGS = yargs
     .describe("o", "Output file")
     .argv;
@@ -74,4 +82,6 @@ function getProps(filename) {
     function add(name) {
         output.props[name] = true;
     }
+}
+
 }
