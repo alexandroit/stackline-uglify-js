@@ -1,10 +1,47 @@
 # @stackline/uglify-js
 
-A maintained compatibility fork of `@sheetjs/uglify-js@2.7.4`, preserving the UglifyJS 2 parser, compressor, mangler, synchronous API, and legacy command-line options.
+> UglifyJS 2-compatible JavaScript minification with a synchronous API and legacy command-line options.
 
-```sh
+[![npm version](https://img.shields.io/npm/v/@stackline/uglify-js.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/uglify-js)
+[![license](https://img.shields.io/npm/l/@stackline/uglify-js.svg?style=flat-square)](https://github.com/alexandroit/stackline-uglify-js/blob/main/LICENSE)
+[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-uglify-js)
+
+**[Documentation](https://github.com/alexandroit/stackline-uglify-js#readme)** |
+**[npm](https://www.npmjs.com/package/@stackline/uglify-js)** |
+**[Issues](https://github.com/alexandroit/stackline-uglify-js/issues)** |
+**[Repository](https://github.com/alexandroit/stackline-uglify-js)**
+
+**Package version:** `1.0.1`
+
+## Why this package?
+
+This maintained compatibility fork of `@sheetjs/uglify-js@2.7.4` preserves the UglifyJS 2 parser, compressor, mangler, synchronous API, and legacy command-line options.
+
+Version 1.0.0 fixed a hashbang/preamble ordering bug: an input beginning with `#!/usr/bin/env node` keeps that interpreter line first when a build or license preamble is supplied. This follows [upstream issue #1332](https://github.com/mishoo/UglifyJS/issues/1332), reproduced against the published SheetJS fork. The SheetJS fork's forced semicolons and source-map serialization compatibility are retained.
+
+File-pattern matching also escapes literal regular-expression characters correctly. In the file-based API, a basename containing a pipe or POSIX backslash no longer selects unrelated files or produces an invalid regular expression. The existing `*` and `?` wildcard behavior is retained.
+
+Source maps use the synchronous `source-map-js` API; the original Browserify transformer is included with its MIT attribution. Modern Yargs loads asynchronously only at CLI startup. `minify`, parsing, and the other library APIs remain synchronous.
+
+## Compatibility
+
+| Item | Value |
+| --- | --- |
+| Package | `@stackline/uglify-js@1.0.1` |
+| Supported Node.js | `^20.19.0 || ^22.12.0 || >=24` |
+| Module entry | `tools/node.js` (CommonJS) |
+| Runtime dependencies | 3 direct dependencies; optional Acorn parser |
+| CLI | `uglifyjs` |
+
+The optional `--acorn` parser is installed by default and parses the ES5 input accepted by this compatibility release. This package retains UglifyJS 2 syntax and options; it does not add a modern JavaScript compressor.
+
+## Installation
+
+```bash
 npm install --save-dev @stackline/uglify-js
 ```
+
+## Usage
 
 ```js
 const UglifyJS = require('@stackline/uglify-js');
@@ -21,14 +58,43 @@ uglifyjs input.js --support-ie8 -m \
   --source-map output.js.map --preamble '/* Build */' -o output.js
 ```
 
-Version 1.0.0 fixes a hashbang/preamble ordering bug: an input beginning with `#!/usr/bin/env node` keeps that interpreter line first when a build or license preamble is supplied. This follows [upstream issue #1332](https://github.com/mishoo/UglifyJS/issues/1332), reproduced against the published SheetJS fork. The SheetJS fork's forced semicolons and source-map serialization compatibility are retained.
+## Security
 
-File-pattern matching also escapes literal regular-expression characters correctly. In the file-based API, a basename containing a pipe or POSIX backslash no longer selects unrelated files or produces an invalid regular expression. The existing `*` and `?` wildcard behavior is retained.
+This compatibility line retains the UglifyJS 2 language surface. File-pattern matching escapes literal regular-expression characters; supplied code is parsed and transformed by the legacy compressor.
 
-The runtime dependencies have been updated. Source maps use the synchronous `source-map-js` API; the original Browserify transformer is included with its MIT attribution. Modern Yargs loads asynchronously only at CLI startup. `minify`, parsing, and the other library APIs remain synchronous.
+## API Surface
 
-Requires Node.js 20.19+, 22.12+, or 24+. The optional `--acorn` parser is installed by default and parses the ES5 input accepted by this compatibility release. This package retains UglifyJS 2 syntax and options; it does not add a modern JavaScript compressor. For complete historical API documentation, see [README.upstream.md](README.upstream.md).
+The full historical options and API reference are preserved in [README.upstream.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/README.upstream.md). The compatibility notes above describe changes in the maintained package.
 
-Run `npm ci` and `npm test` to check the API, command-line options, source maps, property extraction, and Browserify transformer. Browserify output is exercised in a JavaScript VM; this does not establish compatibility with every browser or bundler.
+## Local Development
 
-See [UPSTREAM.md](UPSTREAM.md) for the exact source artifact and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for bundled helper attribution. The UglifyJS source retains its [BSD-2-Clause license](LICENSE).
+Clone the [repository](https://github.com/alexandroit/stackline-uglify-js) and run the following commands from its root:
+
+```bash
+npm ci
+npm test
+```
+
+The suite checks the API, command-line options, source maps, property extraction, and Browserify transformer. Browserify output is exercised in a JavaScript VM; this does not establish compatibility with every browser or bundler.
+
+## Release Checklist
+
+1. Update the package version, lockfile, generated version fields, and changelog together.
+2. Run the development checks above and audit both `npm audit` and `npm audit --omit=dev`.
+3. Use the [GitHub publish workflow](https://github.com/alexandroit/stackline-uglify-js/actions/workflows/publish.yml) with its `Prod` environment to publish the exact CI tarball.
+4. Verify public npm bytes, package identity, provenance, and the immutable GitHub release evidence.
+
+## Community and Support
+
+Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-uglify-js/issues).
+
+- [Stackline / Alexandro.Net](https://alexandro.net/)
+- [GitHub](https://github.com/alexandroit)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
+
+## License
+
+[BSD-2-Clause](https://github.com/alexandroit/stackline-uglify-js/blob/main/LICENSE). Original copyright notices and upstream attribution are retained.
+
+See [UPSTREAM.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/UPSTREAM.md) for the exact source artifact and [THIRD_PARTY_NOTICES.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/THIRD_PARTY_NOTICES.md) for bundled helper attribution.

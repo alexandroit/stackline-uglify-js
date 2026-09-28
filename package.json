@@ -1,10 +1,10 @@
 {
   "name": "@stackline/uglify-js",
-  "description": "Maintained UglifyJS 2 compatibility fork with legacy CLI and synchronous minify API",
+  "description": "UglifyJS 2-compatible JavaScript minification with a synchronous API and legacy command-line options",
   "homepage": "https://github.com/alexandroit/stackline-uglify-js#readme",
   "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
   "license": "BSD-2-Clause",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24"
   },
@@ -26,7 +26,8 @@
     "LICENSE",
     "THIRD_PARTY_NOTICES.md",
     "UPSTREAM.md",
-    "README.upstream.md"
+    "README.upstream.md",
+    "CHANGELOG.md"
   ],
   "dependencies": {
     "async": "^3.2.6",
@@ -45,10 +46,16 @@
     "prepack": "npm test"
   },
   "keywords": [
+    "stackline",
     "uglify",
     "uglify-js",
     "minify",
-    "minifier"
+    "minifier",
+    "uglifyjs",
+    "javascript",
+    "compressor",
+    "source-map",
+    "cli"
   ],
   "publishConfig": {
     "access": "public"

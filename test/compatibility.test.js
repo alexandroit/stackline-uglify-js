@@ -77,7 +77,7 @@ test('stdin, optional Acorn parsing, help/version and failure exit codes remain 
     assert.equal(cli([], { input: 'var a = 1;' }).trim(), 'var a=1;');
     assert.equal(cli(['--acorn'], { input: 'var a = 1;' }).trim(), 'var a=1;');
     assert.match(cli(['--help']), /support-ie8/);
-    assert.equal(cli(['--version']).trim(), '@stackline/uglify-js 1.0.0');
+    assert.equal(cli(['--version']).trim(), '@stackline/uglify-js ' + require('../package.json').version);
     assert.equal(spawnSync(process.execPath, [cliPath], { input: 'function {' }).status, 1);
     assert.equal(spawnSync(process.execPath, [cliPath, 'nonexistent-file.js']).status, 1);
 });
