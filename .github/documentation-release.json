@@ -4,7 +4,7 @@
     {
       "name": "@stackline/uglify-js",
       "path": "README.md",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "baselineVersion": "1.0.2",
       "keywords": [
         "stackline",
@@ -23,8 +23,8 @@
       "homepage": "https://alexandro.net/docs/vanilla/uglify-js/",
       "baselineTarball": "https://registry.npmjs.org/@stackline/uglify-js/-/uglify-js-1.0.2.tgz",
       "baselineIntegrity": "sha512-PNkvQmoKhN4BCYx1cDPdMYB6UkMUWyKRg32RbrHGHFCl+Tf7D36b5ymrQUeiMjn+WGplTRhKpKXfQH9x963dCg==",
-      "expectedSha512": "0a222e1cbf0c9f609b704e52a59b695f18700ca5ba307f37a2782565fbdb56005cc241a70bf64dc8f23e8717f2be7d268b811f4d151b07c1f5cabe4f0f372aef",
-      "tag": "docs-stackline-uglify-js-v1.0.3"
+      "expectedSha512": "d40e365b3a10bd0f20fbbcc6a87f56008052b64b93ae8649edf6864464bd86e00d26c75c700d5cbe2194f7e3232454b92a27072476821e1bbae0a074bdb1fc1b",
+      "tag": "docs-stackline-uglify-js-v1.0.4"
     }
   ]
 }
