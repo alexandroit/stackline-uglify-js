@@ -10,7 +10,7 @@
 
 **[Documentation](https://alexandro.net/docs/vanilla/uglify-js/)** | **[npm](https://www.npmjs.com/package/@stackline/uglify-js)** | **[Issues](https://github.com/alexandroit/stackline-uglify-js/issues)** | **[Repository](https://github.com/alexandroit/stackline-uglify-js)**
 
-**Current package version:** `1.0.4`
+**Current package version:** `1.0.5`
 
 ---
 
@@ -28,7 +28,7 @@ Source maps use the synchronous `source-map-js` API; the original Browserify tra
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/uglify-js@1.0.4` |
+| Package | `@stackline/uglify-js@1.0.5` |
 | Supported Node.js | `^20.19.0 || ^22.12.0 || >=24` |
 | Module entry | `tools/node.js` (CommonJS) |
 | Runtime dependencies | 3 direct dependencies; optional Acorn parser |
