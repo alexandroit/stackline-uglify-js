@@ -127,8 +127,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_BOOTSTRAP_TOKEN }}
         shell: bash
         run: test -n "$NODE_AUTH_TOKEN"
-      - name: Publish the exact CI tarball with OIDC and provenance
+      - name: Publish the exact CI tarball with provenance
         if: steps.registry.outputs.published == 'false' && steps.registry.outputs.package_exists == 'true' && inputs.bootstrap == false
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_MAINTENANCE_TOKEN }}
         run: npm publish ./artifact/*.tgz --access public --provenance --ignore-scripts
       - name: Bootstrap the first version from the exact CI tarball
         if: steps.registry.outputs.published == 'false' && steps.registry.outputs.package_exists == 'false' && inputs.bootstrap == true
