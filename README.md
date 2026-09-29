@@ -3,15 +3,16 @@
 > UglifyJS 2-compatible JavaScript minification with a synchronous API and legacy command-line options.
 
 [![npm version](https://img.shields.io/npm/v/@stackline/uglify-js.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/uglify-js)
-[![license](https://img.shields.io/npm/l/@stackline/uglify-js.svg?style=flat-square)](https://github.com/alexandroit/stackline-uglify-js/blob/main/LICENSE)
-[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-uglify-js)
+[![license](https://img.shields.io/npm/l/@stackline/uglify-js.svg?style=flat-square)](https://github.com/alexandroit/stackline-uglify-js)
+[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-uglify-js-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-uglify-js)
+[![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/uglify-js/)
+[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
-**[Documentation](https://github.com/alexandroit/stackline-uglify-js#readme)** |
-**[npm](https://www.npmjs.com/package/@stackline/uglify-js)** |
-**[Issues](https://github.com/alexandroit/stackline-uglify-js/issues)** |
-**[Repository](https://github.com/alexandroit/stackline-uglify-js)**
+**[Documentation](https://alexandro.net/docs/vanilla/uglify-js/)** | **[npm](https://www.npmjs.com/package/@stackline/uglify-js)** | **[Issues](https://github.com/alexandroit/stackline-uglify-js/issues)** | **[Repository](https://github.com/alexandroit/stackline-uglify-js)**
 
-**Package version:** `1.0.2`
+**Current package version:** `1.0.3`
+
+---
 
 ## Why this package?
 
@@ -27,7 +28,7 @@ Source maps use the synchronous `source-map-js` API; the original Browserify tra
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/uglify-js@1.0.2` |
+| Package | `@stackline/uglify-js@1.0.3` |
 | Supported Node.js | `^20.19.0 || ^22.12.0 || >=24` |
 | Module entry | `tools/node.js` (CommonJS) |
 | Runtime dependencies | 3 direct dependencies; optional Acorn parser |
@@ -84,15 +85,6 @@ The suite checks the API, command-line options, source maps, property extraction
 3. Use the [GitHub publish workflow](https://github.com/alexandroit/stackline-uglify-js/actions/workflows/publish.yml) with its `Prod` environment to publish the exact CI tarball.
 4. Verify public npm bytes, package identity, provenance, and the immutable GitHub release evidence.
 
-## Community and Support
-
-Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-uglify-js/issues).
-
-- [Stackline / Alexandro.Net](https://alexandro.net/)
-- [GitHub](https://github.com/alexandroit)
-- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
-- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
-
 ## License
 
 [BSD-2-Clause](https://github.com/alexandroit/stackline-uglify-js/blob/main/LICENSE). Original copyright notices and upstream attribution are retained.
@@ -100,3 +92,22 @@ Report reproducible package issues in the [issue tracker](https://github.com/ale
 See [UPSTREAM.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/UPSTREAM.md) for the exact source artifact and [THIRD_PARTY_NOTICES.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/THIRD_PARTY_NOTICES.md) for bundled helper attribution.
 
 Dependency maintenance for this release is documented in [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md).
+
+## Credits and original authors
+
+- Original project: [uglify-js](https://github.com/mishoo/UglifyJS).
+- Mihai Bazon.
+- Copyright 2012-2013 (c) Mihai Bazon <mihai.bazon@gmail.com>.
+- Stackline maintenance: [Alexandro Paixao Marques](https://www.linkedin.com/in/aleinfo/) and [Stackline contributors](https://github.com/alexandroit).
+
+Original copyright, license notices and contributor acknowledgements remain part of this distribution. Stackline maintenance does not replace authorship of the original work.
+
+## Community and Links
+
+- [Stackline website](https://alexandro.net/)
+- [GitHub projects](https://github.com/alexandroit)
+- [npm packages](https://www.npmjs.com/~alex360qc)
+- [Reddit community — r/Stackline](https://www.reddit.com/r/Stackline/)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+
+Use this repository's issue tracker for reproducible bugs and feature requests. Join r/Stackline for examples, usage questions and release discussions.

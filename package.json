@@ -1,10 +1,10 @@
 {
   "name": "@stackline/uglify-js",
   "description": "UglifyJS 2-compatible JavaScript minification with a synchronous API and legacy command-line options",
-  "homepage": "https://github.com/alexandroit/stackline-uglify-js#readme",
+  "homepage": "https://alexandro.net/docs/vanilla/uglify-js/",
   "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
   "license": "BSD-2-Clause",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24"
   },
@@ -49,12 +49,14 @@
   },
   "keywords": [
     "stackline",
-    "uglify",
+    "npm-package",
     "uglify-js",
+    "javascript",
+    "nodejs",
+    "uglify",
     "minify",
     "minifier",
     "uglifyjs",
-    "javascript",
     "compressor",
     "source-map",
     "cli"
