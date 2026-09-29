@@ -4,7 +4,7 @@
   "homepage": "https://alexandro.net/docs/vanilla/uglify-js/",
   "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
   "license": "BSD-2-Clause",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24"
   },
