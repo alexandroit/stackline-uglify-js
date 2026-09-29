@@ -4,7 +4,7 @@
   "homepage": "https://github.com/alexandroit/stackline-uglify-js#readme",
   "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
   "license": "BSD-2-Clause",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24"
   },
@@ -27,11 +27,12 @@
     "THIRD_PARTY_NOTICES.md",
     "UPSTREAM.md",
     "README.upstream.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "DEPENDENCY_UPDATES.md"
   ],
   "dependencies": {
-    "async": "^3.2.6",
-    "source-map-js": "^1.2.1",
+    "async": "npm:@stackline/async@1.0.0",
+    "source-map-js": "npm:@stackline/source-map-js@1.0.0",
     "yargs": "^18.2.0"
   },
   "devDependencies": {},
@@ -43,7 +44,8 @@
   "scripts": {
     "test": "node --test test/*.test.js",
     "check": "npm test",
-    "prepack": "npm test"
+    "prepack": "npm test",
+    "test:package": "node scripts/test-package.mjs"
   },
   "keywords": [
     "stackline",

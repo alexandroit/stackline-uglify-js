@@ -11,7 +11,7 @@
 **[Issues](https://github.com/alexandroit/stackline-uglify-js/issues)** |
 **[Repository](https://github.com/alexandroit/stackline-uglify-js)**
 
-**Package version:** `1.0.1`
+**Package version:** `1.0.2`
 
 ## Why this package?
 
@@ -27,7 +27,7 @@ Source maps use the synchronous `source-map-js` API; the original Browserify tra
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/uglify-js@1.0.1` |
+| Package | `@stackline/uglify-js@1.0.2` |
 | Supported Node.js | `^20.19.0 || ^22.12.0 || >=24` |
 | Module entry | `tools/node.js` (CommonJS) |
 | Runtime dependencies | 3 direct dependencies; optional Acorn parser |
@@ -98,3 +98,5 @@ Report reproducible package issues in the [issue tracker](https://github.com/ale
 [BSD-2-Clause](https://github.com/alexandroit/stackline-uglify-js/blob/main/LICENSE). Original copyright notices and upstream attribution are retained.
 
 See [UPSTREAM.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/UPSTREAM.md) for the exact source artifact and [THIRD_PARTY_NOTICES.md](https://github.com/alexandroit/stackline-uglify-js/blob/main/THIRD_PARTY_NOTICES.md) for bundled helper attribution.
+
+Dependency maintenance for this release is documented in [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md).
