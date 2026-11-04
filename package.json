@@ -31,8 +31,8 @@
     "DEPENDENCY_UPDATES.md"
   ],
   "dependencies": {
-    "async": "npm:@stackline/async@1.0.2",
-    "source-map-js": "npm:@stackline/source-map-js@1.0.2",
+    "async": "npm:@stackline/async@1.0.3",
+    "source-map-js": "npm:@stackline/source-map-js@1.0.3",
     "yargs": "^18.2.0"
   },
   "devDependencies": {},
