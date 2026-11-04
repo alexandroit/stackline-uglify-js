@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.6 - 2026-11-04
+
+- Update development dependency constraints and CI runtimes for reviewed security advisories.
+- Preserve the public runtime API; validate the packed package with the existing consumer tests.
+
+
 ## 1.0.2 - 2026-09-28
 
 - Pin verified Stackline maintenance forks under the existing dependency import names; see `DEPENDENCY_UPDATES.md`.
